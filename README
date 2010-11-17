@@ -1,0 +1,15 @@
+This Project has been created to map the Bongo-Project store protocol to a more Ruby - Rails friendly file or gem I don't know.
+
+The Bongo Store Protocol Spec can be found here
+
+http://www.bongo-project.org/Documentation/Store_Protocol
+
+This project is Licensed as follows.
+
+GNU General Public License V2 or later
+
+The Project page is here
+
+http://www.bongo-project.org/Development/RBongo
+
+I would appreciate any help to get this going.
