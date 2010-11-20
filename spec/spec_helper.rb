@@ -1,0 +1,7 @@
+require File.dirname(__FILE__) + '/../lib/model'
+require File.dirname(__FILE__) + '/../lib/responses/base'
+require File.dirname(__FILE__) + '/../lib/responses/ok'
+require File.dirname(__FILE__) + '/../lib/responses/unknown_command'
+require File.dirname(__FILE__) + '/../lib/responses/bad_authentication'
+require File.dirname(__FILE__) + '/../lib/responses/factory'
+require File.dirname(__FILE__) + '/../lib/collection'

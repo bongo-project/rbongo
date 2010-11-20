@@ -1,10 +1,17 @@
 require 'socket'      # Sockets are in standard library
 # 
-hostname = '172.16.71.140'
+hostname = '172.16.68.165'
 port = '689'
 user = 'bongo'
 password = 'bongo'
 
+socket= TCPSocket.new(hostname, port)
+print socket.recv(10000)
+socket.send("auth user bongo bongo\n", 0)
+print socket.recv(10000)
+
+
+__END__
 class Connection
   attr_accessor :hostname, :port, :username, :password, :socket, :cookie
   
@@ -60,9 +67,9 @@ puts port
 puts user
 puts password
 
-connection.authorize
+#connection.authorize
 print connection.recieve
-
+print connection.recieve
 
 
 
