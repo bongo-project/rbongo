@@ -1,9 +1,9 @@
 require 'socket'
 
-hostname = '172.16.71.135'
+hostname = '172.16.71.140'
 port = '689'
-user = 'lhaig'
-password = 'password'
+user = 'bongo'
+password = 'bongo'
 
 streamSock = TCPSocket.new(hostname, port)
 

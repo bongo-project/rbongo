@@ -1,6 +1,6 @@
 require 'socket'      # Sockets are in standard library
 # 
-hostname = '172.16.68.165'
+hostname = '172.16.71.140'
 port = '689'
 user = 'bongo'
 password = 'bongo'
