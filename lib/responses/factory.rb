@@ -17,6 +17,8 @@ module Bongo
             return Bongo::Response::InvalidArguments.new(response)
           when 3242
             return Bongo::Response::BadAuthentication.new(response)
+          when 5004
+            return Bongo::Response::CookieDatabaseError.new(response)
           else
             return Bongo::Response::Base.new(response)
           end

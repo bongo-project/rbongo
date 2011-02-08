@@ -21,6 +21,11 @@ describe Bongo::Response::Factory do
     response.class.should be Bongo::Response::BadAuthentication
   end
   
+  it "should return a database error response for a damaged cookie database" do
+    response = Bongo::Response::Factory.provide("5004 Some message")
+    response.class.should be Bongo::Response::CookieDatabaseError
+  end
+  
   it "should return a list of responses if a command so warrants" do
     response = Bongo::Response::Factory.provide("2001 admin\r\n2001 bongo\r\n1000 OK\r\n")
     response.length.should == 3
