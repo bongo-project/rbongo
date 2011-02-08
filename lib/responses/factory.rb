@@ -13,16 +13,22 @@ module Bongo
             return Bongo::Response::Ok.new(response)
           when 3000
             return Bongo::Response::UnknownCommand.new(response)
-          when 3010 
+          when 3010
             return Bongo::Response::InvalidArguments.new(response)
+          when 3011
+            return Bongo::Response::InvalidGuid.new(response)
           when 3242
             return Bongo::Response::BadAuthentication.new(response)
           when 3241
             return Bongo::Response::IdentifyFirst.new(response)
           when 4100
             return Bongo::Response::StoreNotFound.new(response)
+          when 4224
+            return Bongo::Response::CollectionDoesNotExist.new(response)
           when 5004
             return Bongo::Response::CookieDatabaseError.new(response)
+          when 5005
+            return Bongo::Response::CollectionDatabaseError.new(response)
           else
             return Bongo::Response::Base.new(response)
           end

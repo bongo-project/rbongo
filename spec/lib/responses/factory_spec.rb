@@ -16,6 +16,11 @@ describe Bongo::Response::Factory do
     response.class.should be Bongo::Response::InvalidArguments
   end
   
+  it "should return a invalid guid response for a command with incorrect guid" do
+    response = Bongo::Response::Factory.provide("3011 Some message")
+    response.class.should be Bongo::Response::InvalidGuid
+  end
+  
   it "should return a identify first response for a failed stores command" do
     response = Bongo::Response::Factory.provide("3241 Some message")
     response.class.should be Bongo::Response::IdentifyFirst
@@ -30,10 +35,19 @@ describe Bongo::Response::Factory do
     response = Bongo::Response::Factory.provide("4100 Some message")
     response.class.should be Bongo::Response::StoreNotFound
   end
-  
-  it "should return a database error response for a damaged cookie database" do
+
+  it "should return a collection does not exist response for a failed collection command" do
+    response = Bongo::Response::Factory.provide("4224 Some message")
+    response.class.should be Bongo::Response::CollectionDoesNotExist
+  end  
+
+  it "should return a cookie database error response for a damaged cookie database" do
     response = Bongo::Response::Factory.provide("5004 Some message")
     response.class.should be Bongo::Response::CookieDatabaseError
+  end
+  it "should return a collection database error response for a damaged collection database" do
+    response = Bongo::Response::Factory.provide("5005 Some message")
+    response.class.should be Bongo::Response::CollectionDatabaseError
   end
   
   it "should return a list of responses if a command so warrants" do
