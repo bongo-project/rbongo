@@ -1,5 +1,11 @@
 require File.dirname(__FILE__) + '/../spec_helper'
-
+    ADMIN_USER = 'admin'
+    ADMIN_PW = 'bongo'
+    NORMAL_USER = 'bongo'
+    NORMAL_PW = 'bongo'
+    BAD_USER = 'abc'
+    BAD_PW = 'def'
+    
 describe User do
   before(:each) do
     @connection = Connection.new('172.16.71.140', 689, [])
@@ -11,28 +17,28 @@ describe User do
   end
 
   it "should return ok when a valid username and password are supplied" do
-    response = @user.login('bongo', 'bongo')
+    response = @user.login(NORMAL_USER, NORMAL_PW)
     response.class.should == Bongo::Response::Ok
   end
   
   it "should return a bad authentication message if the password is incorrect" do
-    response = @user.login('bongo', 'def')
+    response = @user.login(NORMAL_USER, BAD_PW)
     response.class.should == Bongo::Response::BadAuthentication
   end
 
   it "should return a bad authentication message if the username is incorrect" do
-    response = @user.login('abc', 'bongo')
+    response = @user.login(BAD_USER, NORMAL_PW)
     response.class.should == Bongo::Response::BadAuthentication
   end
 
   it "should know the collections available" do
-    @user.login('bongo', 'bongo')
+    @user.login(NORMAL_USER, NORMAL_PW)
     @user.store()
     response = @user.collections()
   end
 
   it "should be able to choose the store it is working with" do
-    @user.login('bongo', 'bongo')
+    @user.login(NORMAL_USER, NORMAL_PW)
     response = @user.store()
   end
   
