@@ -26,6 +26,11 @@ describe Bongo::Response::Factory do
     response.class.should be Bongo::Response::IllegalName
   end
   
+  it "should return a bad syntax response for a command with bad syntax" do
+    response = Bongo::Response::Factory.provide("3022 Some message")
+    response.class.should be Bongo::Response::BadSyntax
+  end
+  
   it "should return a identify first response for a failed stores command" do
     response = Bongo::Response::Factory.provide("3241 Some message")
     response.class.should be Bongo::Response::IdentifyFirst
