@@ -3,17 +3,17 @@ require File.dirname(__FILE__) + '/../../spec_helper'
 describe Bongo::Response::Factory do
   it "should return an OK response for a command that was successful" do
     response = Bongo::Response::Factory.provide("1000 Some message\r\n")
-    response.first.class.should be Bongo::Response::Ok
+    response.class.should be Bongo::Response::Ok
   end
   
   it "should return a unknown command response for a command that is not implemented" do
     response = Bongo::Response::Factory.provide("3000 Some message")
-    response.first.class.should be Bongo::Response::UnknownCommand
+    response.class.should be Bongo::Response::UnknownCommand
   end
   
   it "should return a bad authentication response for a failed login command" do
     response = Bongo::Response::Factory.provide("3242 Some message")
-    response.first.class.should be Bongo::Response::BadAuthentication
+    response.class.should be Bongo::Response::BadAuthentication
   end
   
   it "should return a list of responses if a command so warrants" do

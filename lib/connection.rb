@@ -12,15 +12,15 @@ class Connection
     responses = []
     # while Bongo::Response::Factory.provide(@instance.gets).class != Bongo::Response::Ok  # Read lines from the socket
     while response = @instance.gets
-      throw response
-      if(response.nil? == false) then
+      unless response.nil? then
+        puts "Got #{response}<br>"
         r = Bongo::Response::Factory.provide(response)
-        if (r.class == Bongo::Response::Ok) 
+        if (r.class == Bongo::Response::Ok) or (r.class == Bongo::Response::BadAuthentication) or (r.class == Bongo::Response::UnknownCommand)
           break
         end
       end
     end
-        puts r.inspect
+    r
       # if response[0..3] = "1000" then
       #   throw response
       # end

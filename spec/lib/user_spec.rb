@@ -12,17 +12,17 @@ describe User do
 
   it "should return ok when a valid username and password are supplied" do
     response = @user.login('bongo', 'bongo')
-    response.should be_true
+    response.class.should == Bongo::Response::Ok
   end
   
   it "should return a bad authentication message if the password is incorrect" do
     response = @user.login('bongo', 'def')
-    response.should be_false
+    response.class.should == Bongo::Response::BadAuthentication
   end
 
   it "should return a bad authentication message if the username is incorrect" do
     response = @user.login('abc', 'bongo')
-    response.should be_false
+    response.class.should == Bongo::Response::BadAuthentication
   end
 
   it "should know the collections available" do
@@ -40,3 +40,10 @@ describe User do
 
   end
 end
+
+
+
+# 13:11
+# Lance Haig
+# 13:11
+# So I have thought of 2 recipe's a login to the server and listing of their folders and a login to the server and viewing one of the mails in the /mail/INBOX collection

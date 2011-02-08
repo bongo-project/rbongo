@@ -6,8 +6,9 @@ class User
   def login(username, password)
     @username, @password = username, password
     response = execute("auth user #{username} #{password}")
-    throw response
-    response.class == Bongo::Response::Ok
+    response
+    # return Bongo::Response::Ok.new(response)
+    # response.class == Bongo::Response::Ok
   end
 
   def store()
@@ -29,6 +30,7 @@ class User
   
   private
   def execute(command)
-    Bongo::Response::Factory.provide(@connection.send(command))
+    # Bongo::Response::Factory.provide(@connection.send(command))
+    @connection.send(command)
   end
 end
