@@ -17,6 +17,8 @@ module Bongo
             return Bongo::Response::InvalidArguments.new(response)
           when 3011
             return Bongo::Response::InvalidGuid.new(response)
+          when 3014
+            return Bongo::Response::IlegalName.new(response)
           when 3242
             return Bongo::Response::BadAuthentication.new(response)
           when 3241
@@ -25,6 +27,10 @@ module Bongo
             return Bongo::Response::StoreNotFound.new(response)
           when 4224
             return Bongo::Response::CollectionDoesNotExist.new(response)
+          when 4226
+            return Bongo::Response::CollectionExists.new(response)
+          when 4227
+            return Bongo::Response::GuidExists.new(response)
           when 5004
             return Bongo::Response::CookieDatabaseError.new(response)
           when 5005

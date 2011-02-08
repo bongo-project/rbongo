@@ -21,6 +21,11 @@ describe Bongo::Response::Factory do
     response.class.should be Bongo::Response::InvalidGuid
   end
   
+  it "should return a illegal Name response for a command with illegal name" do
+    response = Bongo::Response::Factory.provide("3014 Some message")
+    response.class.should be Bongo::Response::IllegalName
+  end
+  
   it "should return a identify first response for a failed stores command" do
     response = Bongo::Response::Factory.provide("3241 Some message")
     response.class.should be Bongo::Response::IdentifyFirst
@@ -35,11 +40,21 @@ describe Bongo::Response::Factory do
     response = Bongo::Response::Factory.provide("4100 Some message")
     response.class.should be Bongo::Response::StoreNotFound
   end
-
+  
   it "should return a collection does not exist response for a failed collection command" do
     response = Bongo::Response::Factory.provide("4224 Some message")
     response.class.should be Bongo::Response::CollectionDoesNotExist
-  end  
+  end
+  
+  it "should return a collection exists response for a failed collection create command" do
+    response = Bongo::Response::Factory.provide("4226 Some message")
+    response.class.should be Bongo::Response::CollectionExists
+  end
+  
+  it "should return a guid exists response for a failed collection create command" do
+    response = Bongo::Response::Factory.provide("4227 Some message")
+    response.class.should be Bongo::Response::GuidExists
+  end
 
   it "should return a cookie database error response for a damaged cookie database" do
     response = Bongo::Response::Factory.provide("5004 Some message")
