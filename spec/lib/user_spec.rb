@@ -1,10 +1,7 @@
 require File.dirname(__FILE__) + '/../spec_helper'
-    ADMIN_USER = 'admin'
-    ADMIN_PW = 'bongo'
-    NORMAL_USER = 'bongo'
-    NORMAL_PW = 'bongo'
-    BAD_USER = 'abc'
-    BAD_PW = 'def'
+    ADMIN_USER, ADMIN_PW = 'admin', 'bongo'
+    NORMAL_USER, NORMAL_PW = 'bongo', 'bongo'
+    BAD_USER, BAD_PW = 'abc', 'def'
     
 describe User do
   before(:each) do
