@@ -25,8 +25,16 @@ module Bongo
             return Bongo::Response::IdentifyFirst.new(response)
           when 4100
             return Bongo::Response::StoreNotFound.new(response)
+          when 4120
+            return Bongo::Response::DatabaseLocked.new(response)
+          when 4220
+            return Bongo::Response::NoSuchGuid.new(response)
+          when 4221
+            return Bongo::Response::CollectionShared.new(response)
           when 4224
             return Bongo::Response::CollectionDoesNotExist.new(response)
+          when 4225
+            return Bongo::Response::DocumentDoesNotExist.new(response)
           when 4226
             return Bongo::Response::CollectionExists.new(response)
           when 4227

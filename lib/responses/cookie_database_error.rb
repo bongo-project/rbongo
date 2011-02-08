@@ -1,6 +1,6 @@
 module Bongo
   module Response
-    class DatabaseError < Bongo::Response::Base
+    class CookieDatabaseError < Bongo::Response::Base
     end
   end
 end

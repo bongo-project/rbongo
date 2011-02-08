@@ -41,9 +41,29 @@ describe Bongo::Response::Factory do
     response.class.should be Bongo::Response::StoreNotFound
   end
   
+  it "should return a database locked response for a failed collection search command" do
+    response = Bongo::Response::Factory.provide("4120 Some message")
+    response.class.should be Bongo::Response::DatabaseLocked
+  end
+  
+  it "should return a no such guid response for a failed collection search command" do
+    response = Bongo::Response::Factory.provide("4220 Some message")
+    response.class.should be Bongo::Response::NoSuchGuid
+  end
+  
+  it "should return a collection shared response for a failed collection remove command" do
+    response = Bongo::Response::Factory.provide("4221 Some message")
+    response.class.should be Bongo::Response::CollectionShared
+  end
+  
   it "should return a collection does not exist response for a failed collection command" do
     response = Bongo::Response::Factory.provide("4224 Some message")
     response.class.should be Bongo::Response::CollectionDoesNotExist
+  end
+  
+  it "should return a document does not exist response for a failed flag command" do
+    response = Bongo::Response::Factory.provide("4225 Some message")
+    response.class.should be Bongo::Response::DocumentDoesNotExist
   end
   
   it "should return a collection exists response for a failed collection create command" do
