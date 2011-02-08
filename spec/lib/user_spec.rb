@@ -2,7 +2,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 
 describe User do
   before(:each) do
-    @connection = Connection.new('172.16.68.165', 689, [])
+    @connection = Connection.new('172.16.71.140', 689, [])
     @user = User.new(@connection)
   end
 
