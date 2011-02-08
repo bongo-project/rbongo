@@ -17,13 +17,17 @@ module Bongo
             return Bongo::Response::InvalidArguments.new(response)
           when 3242
             return Bongo::Response::BadAuthentication.new(response)
+          when 3241
+            return Bongo::Response::IdentifyFirst.new(response)
+          when 4100
+            return Bongo::Response::StoreNotFound.new(response)
           when 5004
             return Bongo::Response::CookieDatabaseError.new(response)
           else
             return Bongo::Response::Base.new(response)
           end
         end
-
+        
         return values.first unless values.length > 1
         values
       end

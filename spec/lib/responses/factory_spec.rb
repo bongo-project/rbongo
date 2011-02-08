@@ -16,9 +16,19 @@ describe Bongo::Response::Factory do
     response.class.should be Bongo::Response::InvalidArguments
   end
   
+  it "should return a identify first response for a failed stores command" do
+    response = Bongo::Response::Factory.provide("3241 Some message")
+    response.class.should be Bongo::Response::IdentifyFirst
+  end
+  
   it "should return a bad authentication response for a failed login command" do
     response = Bongo::Response::Factory.provide("3242 Some message")
     response.class.should be Bongo::Response::BadAuthentication
+  end
+  
+  it "should return a store not found response for a failed store command" do
+    response = Bongo::Response::Factory.provide("4100 Some message")
+    response.class.should be Bongo::Response::StoreNotFound
   end
   
   it "should return a database error response for a damaged cookie database" do
