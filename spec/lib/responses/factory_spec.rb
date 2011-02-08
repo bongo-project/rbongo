@@ -11,6 +11,11 @@ describe Bongo::Response::Factory do
     response.class.should be Bongo::Response::UnknownCommand
   end
   
+  it "should return a invalid arguments response for a command with incorrect arguments" do
+    response = Bongo::Response::Factory.provide("3010 Some message")
+    response.class.should be Bongo::Response::InvalidArguments
+  end
+  
   it "should return a bad authentication response for a failed login command" do
     response = Bongo::Response::Factory.provide("3242 Some message")
     response.class.should be Bongo::Response::BadAuthentication

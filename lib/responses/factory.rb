@@ -13,6 +13,8 @@ module Bongo
             return Bongo::Response::Ok.new(response)
           when 3000
             return Bongo::Response::UnknownCommand.new(response)
+          when 3010 
+            return Bongo::Response::InvalidArguments.new(response)
           when 3242
             return Bongo::Response::BadAuthentication.new(response)
           else
