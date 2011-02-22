@@ -1,0 +1,2 @@
+Make defaults readable from configuration
+Write tests for said configuration

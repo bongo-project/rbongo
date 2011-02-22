@@ -4,7 +4,7 @@ module Bongo
       attr_reader :code, :body
 
       def initialize(response)
-        @code, @body = _code(response), body(response)
+        @code, @body = _code(response), _body(response)
       end
       
       def self.get_code(response)
@@ -20,7 +20,7 @@ module Bongo
         response[0..3].to_i
       end
   
-      def body(response)
+      def _body(response)
         response.slice(5, (response.size - 5))
       end
     end

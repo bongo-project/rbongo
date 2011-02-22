@@ -5,7 +5,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
     
 describe User do
   before(:each) do
-    @connection = Connection.new('172.16.71.140', 689, [])
+    @connection = Connection.new('172.16.68.165', 689, [])
     @user = User.new(@connection)
   end
 
@@ -15,33 +15,36 @@ describe User do
 
   it "should return ok when a valid username and password are supplied" do
     response = @user.login(NORMAL_USER, NORMAL_PW)
-    response.class.should == Bongo::Response::Ok
+    response.last.class == Bongo::Response::Ok
   end
   
   it "should return a bad authentication message if the password is incorrect" do
     response = @user.login(NORMAL_USER, BAD_PW)
-    response.class.should == Bongo::Response::BadAuthentication
+    response.last.class.should == Bongo::Response::BadAuthentication
   end
 
   it "should return a bad authentication message if the username is incorrect" do
     response = @user.login(BAD_USER, NORMAL_PW)
-    response.class.should == Bongo::Response::BadAuthentication
+    response.last.class.should == Bongo::Response::BadAuthentication
   end
 
   it "should know the collections available" do
     @user.login(NORMAL_USER, NORMAL_PW)
     @user.store()
-    response = @user.collections()
+    @user.collections().items.any?{|item| item.path == '/mail/INBOX'}.should be_true
   end
 
-  it "should be able to choose the store it is working with" do
-    @user.login(NORMAL_USER, NORMAL_PW)
-    response = @user.store()
+  it "should know the contents" do
+    
   end
-  
-  it "should be able to view the stores" do
-
-  end
+  # it "should be able to choose the store it is working with" do
+  #   @user.login(NORMAL_USER, NORMAL_PW)
+  #   response = @user.store()
+  # end
+  # 
+  # it "should be able to view the stores" do
+  # 
+  # end
 end
 
 

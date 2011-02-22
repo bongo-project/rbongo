@@ -7,8 +7,6 @@ class User
     @username, @password = username, password
     response = execute("auth user #{username} #{password}")
     response
-    # return Bongo::Response::Ok.new(response)
-    # response.class == Bongo::Response::Ok
   end
 
   def store()
@@ -24,8 +22,13 @@ class User
   end
   
   def collections()
-    collections = execute("collections")
-    collections.map {|collection| Collection.new(collection) }
+    collection_response = execute("collections")
+    Bongo::Collection.new(collection_response)
+  end
+  
+  def list(path)
+    list_response = execute("list #{path}")
+    Bongo::List.new(list_response)
   end
   
   private

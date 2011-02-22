@@ -13,21 +13,15 @@ class Connection
     # while Bongo::Response::Factory.provide(@instance.gets).class != Bongo::Response::Ok  # Read lines from the socket
     while response = @instance.gets
       unless response.nil? then
-        puts "Got #{response}<br>"
+        # puts "Got #{response}<br>"
         r = Bongo::Response::Factory.provide(response)
+        responses << r
         if (r.class == Bongo::Response::Ok) or (r.class == Bongo::Response::BadAuthentication) or (r.class == Bongo::Response::UnknownCommand)
           break
         end
       end
     end
-    r
-      # if response[0..3] = "1000" then
-      #   throw response
-      # end
-      # responses.push Bongo::Response::Factory.provide(response)
-      # puts Bongo::Response::Factory.provide(response).inspect
-    # end
-    # @instance.recv(1000)
+    responses
   end
   
   def close()
