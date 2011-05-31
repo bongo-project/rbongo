@@ -1,0 +1,3 @@
+Connected to 172.16.180.132.
+Escape character is '^]'.
+4242 NMAP <b5cc1b70bongotest4de4fad2>

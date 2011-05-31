@@ -1,0 +1,79 @@
+2001 nmap.document 3658
+Received: from mail.bongo-test.info (127.0.0.1) by mail.bongo-test.info
+	with NMAP (bongoqueue Agent); Sun, 22 Aug 2010 21:56:00 +0000
+Received: from chlorine.canonical.com (91.189.94.204) by mail.bongo-test.info
+	with ESMTP (bongosmtp Agent); Sun, 22 Aug 2010 21:56:00 +0000
+Received: from localhost ([127.0.0.1] helo=chlorine.canonical.com)
+	by chlorine.canonical.com with esmtp (Exim 4.69)
+	(envelope-from <ubuntu-bugs-bounces@lists.ubuntu.com>)
+	id 1OnIWF-0003sN-KH; Sun, 22 Aug 2010 22:55:59 +0100
+Received: from adelie.canonical.com ([91.189.90.139])
+	by chlorine.canonical.com with esmtp (Exim 4.69)
+	(envelope-from <bounces@canonical.com>) id 1OnIWE-0003rt-95
+	for ubuntu-bugs@lists.ubuntu.com; Sun, 22 Aug 2010 22:55:58 +0100
+Received: from loganberry.canonical.com ([91.189.90.37])
+	by adelie.canonical.com with esmtp (Exim 4.69 #1 (Debian))
+	id 1OnIWC-0001kp-6B
+	for <ubuntu-bugs@lists.ubuntu.com>; Sun, 22 Aug 2010 22:55:56 +0100
+Received: from loganberry.canonical.com (localhost [127.0.0.1])
+	by loganberry.canonical.com (Postfix) with ESMTP id 9A1602E80DA
+	for <ubuntu-bugs@lists.ubuntu.com>;
+	Sun, 22 Aug 2010 22:55:48 +0100 (BST)
+MIME-Version: 1.0
+Date: Sun, 22 Aug 2010 21:48:07 -0000
+From: David Tombs <cyan.spam@gmail.com>
+To: ubuntu-bugs@lists.ubuntu.com
+X-Launchpad-Bug: distribution=ubuntu; sourcepackage=None; component=None;
+	status=Incomplete; importance=Undecided; assignee=None; 
+X-Launchpad-Bug-Tags: apport-bug i386
+X-Launchpad-Bug-Private: no
+X-Launchpad-Bug-Security-Vulnerability: no
+X-Launchpad-Bug-Commenters: dgtombs gsedej
+X-Launchpad-Bug-Reporter: =?utf-8?q?Ga=C5=A1per_Sedej_=28gsedej=29?=
+References: <20091013110702.14029.43734.malonedeb@palladium.canonical.com>
+Message-Id: <20100822214807.19290.15315.malone@soybean.canonical.com>
+Subject: [Bug 450263] Re: Problmens connected with Ubuntu 9.10, mono, Tao, SDL,
+	OpenGL, Radeon
+X-Launchpad-Message-Rationale: Subscriber (Ubuntu) @ubuntu-bugs
+Precedence: bulk
+X-Generated-By: Launchpad (canonical.com); Revision="None";
+	Instance="initZopeless config overlay"
+X-Launchpad-Hash: 65abbf2ceef998ae0c43588df4827826a882a502
+X-BeenThere: ubuntu-bugs@lists.ubuntu.com
+X-Mailman-Version: 2.1.9
+Reply-To: Bug 450263 <450263@bugs.launchpad.net>
+List-Id: Ubuntu bug tracker changes - HIGH VOLUME
+	<ubuntu-bugs.lists.ubuntu.com>
+List-Unsubscribe: <https://lists.ubuntu.com/mailman/listinfo/ubuntu-bugs>,
+	<mailto:ubuntu-bugs-request@lists.ubuntu.com?subject=unsubscribe>
+List-Post: <mailto:ubuntu-bugs@lists.ubuntu.com>
+List-Help: <mailto:ubuntu-bugs-request@lists.ubuntu.com?subject=help>
+List-Subscribe: <https://lists.ubuntu.com/mailman/listinfo/ubuntu-bugs>,
+	<mailto:ubuntu-bugs-request@lists.ubuntu.com?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Sender: ubuntu-bugs-bounces@lists.ubuntu.com
+Errors-To: ubuntu-bugs-bounces@lists.ubuntu.com
+
+Hi Gasper,
+
+I think you have two options:
+
+1) Try to demonstrate the problem in a test application without Mono.XNA (but that might be a lot of work, I don't know).
+2) Talk to the Mono.XNA developers to help diagnose your problem.
+
+Either way, I don't think Ubuntu developers will want to spend a lot of
+time trying to diagnose this, unfortunately. Thanks for your help!
+
+-- 
+Problmens connected with Ubuntu 9.10, mono, Tao, SDL, OpenGL, Radeon
+https://bugs.launchpad.net/bugs/450263
+You received this bug notification because you are a member of Ubuntu
+Bugs, which is subscribed to Ubuntu.
+
+-- 
+ubuntu-bugs mailing list
+ubuntu-bugs@lists.ubuntu.com
+https://lists.ubuntu.com/mailman/listinfo/ubuntu-bugs
+
+
