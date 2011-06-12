@@ -3,6 +3,7 @@ module Bongo
     class UserDoesNotExist < Bongo::Response::Base
       def initialize()
         @body = "The user does not exist"
+      end
     end
   end
 end

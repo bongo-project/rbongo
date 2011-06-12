@@ -3,6 +3,7 @@ module Bongo
     class DocumentTypeNotAllowed < Bongo::Response::Base
       def initialize()
         @body = "Document type not allowed"
+      end
     end
   end
 end

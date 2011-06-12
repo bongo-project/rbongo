@@ -3,6 +3,7 @@ module Bongo
     class BadSyntax < Bongo::Response::Base
       def initialize()
         @body = "Bad Syntax"
+      end
     end
   end
 end

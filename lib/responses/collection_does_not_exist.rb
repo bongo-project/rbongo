@@ -3,6 +3,7 @@ module Bongo
     class CollectionDoesNotFound < Bongo::Response::Base
       def initialize()
         @body = "Collection does not exist"
+      end
     end
   end
 end

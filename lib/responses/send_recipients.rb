@@ -3,6 +3,7 @@ module Bongo
     class SendRecipients < Bongo::Response::Base
       def initialize()
         @body = "Send recipients"
+      end
     end
   end
 end

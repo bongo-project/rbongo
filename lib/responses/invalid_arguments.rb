@@ -3,6 +3,7 @@ module Bongo
     class InvalidArguments < Bongo::Response::Base
       def initialize()
         @body = "The arguments are invalid"
+      end
     end
   end
 end

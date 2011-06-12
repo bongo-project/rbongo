@@ -3,6 +3,7 @@ module Bongo
     class NoSuchGuid < Bongo::Response::Base
       def initialize()
         @body = "No such GUID"
+      end
     end
   end
 end

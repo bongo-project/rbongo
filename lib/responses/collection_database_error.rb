@@ -3,6 +3,7 @@ module Bongo
     class CollectionDatabaseError < Bongo::Response::Base
       def initialize()
         @body = "Collection database error"
+      end
     end
   end
 end

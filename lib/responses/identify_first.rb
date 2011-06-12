@@ -3,6 +3,7 @@ module Bongo
     class IdentifyFirst < Bongo::Response::Base
       def initialize()
         @body = "Authenticate first"
+      end
     end
   end
 end
