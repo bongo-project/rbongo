@@ -1,3 +1,4 @@
+require 'socket'
 class Connection
   def initialize(hostname, port, loggers=[])
     @instance = TCPSocket.new(hostname, port)
