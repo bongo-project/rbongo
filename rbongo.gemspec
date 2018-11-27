@@ -8,5 +8,5 @@ Gem::Specification.new do |s|
   s.homepage = "http://www.bongo-project.org/Development/RBongo"
   s.required_ruby_version = ">= 1.8.7"
   s.files = ['README', 'LICENSE', 'lib/collection.rb', 'spec/spec-helper.rb']
-  s.add_development_dependency('rspec', '= 2.1.0')
+  s.add_development_dependency('rspec', '= 3.8.0')
 end
